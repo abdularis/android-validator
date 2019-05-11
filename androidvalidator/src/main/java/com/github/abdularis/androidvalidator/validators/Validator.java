@@ -1,4 +1,6 @@
-package com.github.abdularis.androidvalidator;
+package com.github.abdularis.androidvalidator.validators;
+
+import android.support.annotation.NonNull;
 
 public abstract class Validator {
 
@@ -8,7 +10,7 @@ public abstract class Validator {
         mMessage = message;
     }
 
-    public abstract boolean validate(String text);
+    public abstract boolean validate(@NonNull String text);
 
     public String getMessage() {
         return mMessage;
