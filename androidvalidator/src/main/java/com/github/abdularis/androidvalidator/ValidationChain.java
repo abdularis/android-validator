@@ -129,11 +129,12 @@ public class ValidationChain {
         String text = mText.getText().toString();
         for (Validator validator : mValidators) {
             if (!validator.validate(text)) {
+                String errMessage = validator.getMessage();
+                if (mShowEditTextError) {
+                    mText.setError(errMessage);
+                }
+
                 if (mErrorCallback != null) {
-                    String errMessage = validator.getMessage();
-                    if (mShowEditTextError) {
-                        mText.setError(errMessage);
-                    }
                     mErrorCallback.onError(errMessage);
                 }
                 return false;
