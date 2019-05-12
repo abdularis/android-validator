@@ -22,4 +22,9 @@ public class NumberRangeValidator extends Validator {
             return false;
         }
     }
+
+    @Override
+    public String getMessage() {
+        return String.format(super.getMessage(), min, max);
+    }
 }

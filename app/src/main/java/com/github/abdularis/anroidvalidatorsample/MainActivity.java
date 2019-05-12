@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
         mValidationChainGroup = new ValidationChainGroup();
         mValidationChainGroup.createNew(t1)
-                .charMin(6, "Nama minimal 6 karakter")
+                .charMin(6)
                 .setErrorCallback(til1::setError);
         mValidationChainGroup.createNew(t2)
-                .isNotEmpty("Field harus diisi")
-                .isNumber("Tahun harus berupa angka")
-                .numberBetween(1990, 2000, "Tahun harus antara 1990 sampai 2000")
+                .isNotEmpty()
+                .isNumber()
+                .numberBetween(1990, 2000)
                 .setErrorCallback(til2::setError);
     }
 }

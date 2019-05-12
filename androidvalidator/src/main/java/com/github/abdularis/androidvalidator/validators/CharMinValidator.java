@@ -15,4 +15,9 @@ public class CharMinValidator extends Validator {
     public boolean validate(@NonNull String text) {
         return text.length() >= min;
     }
+
+    @Override
+    public String getMessage() {
+        return String.format(super.getMessage(), min);
+    }
 }

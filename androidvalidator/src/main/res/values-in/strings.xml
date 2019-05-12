@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Validator</string>
+    <string name="av_char_min">Minimal %d karakter</string>
+    <string name="av_email_invalid">Alamat email tidak valid</string>
+    <string name="av_field_empty">Field tidak boleh kosong</string>
+    <string name="av_not_number">Harus berisi nomor</string>
+    <string name="av_number_between">Angka harus antara %d sampai %d</string>
+    <string name="av_string_between">Harus antara %d sampai %d karakter</string>
+    <string name="av_year_to_now">Tahun harus antara %d sampai %d</string>
+    <string name="av_et_password_confirm_err">Konfirmasi password tidak sama dengan password</string>
+</resources>

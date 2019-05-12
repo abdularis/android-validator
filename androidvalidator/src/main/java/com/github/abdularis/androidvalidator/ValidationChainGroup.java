@@ -9,7 +9,14 @@ public class ValidationChainGroup {
 
     private List<ValidationChain> mValidationChains = new ArrayList<>();
 
+    @Deprecated
     public ValidationChain createNew(EditText editText) {
+        ValidationChain validationChain = ValidationChain.create(editText);
+        add(validationChain);
+        return validationChain;
+    }
+
+    public ValidationChain add(EditText editText) {
         ValidationChain validationChain = ValidationChain.create(editText);
         add(validationChain);
         return validationChain;

@@ -17,4 +17,9 @@ public class CharBoundValidator extends Validator {
     public boolean validate(@NonNull String text) {
         return text.length() >= min && text.length() <= max;
     }
+
+    @Override
+    public String getMessage() {
+        return String.format(super.getMessage(), min, max);
+    }
 }

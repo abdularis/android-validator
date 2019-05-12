@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Android Validator</string>
+    <string name="av_field_empty">Field cannot be empty</string>
+    <string name="av_email_invalid">Email address is invalid</string>
+    <string name="av_not_number">This has to be number</string>
+    <string name="av_number_between">Number must between %d to %d</string>
+    <string name="av_string_between">Must between %d to %d characters</string>
+    <string name="av_char_min">Minimum character %d</string>
+    <string name="av_year_to_now">Year must between %d to $d</string>
+    <string name="av_et_password_confirm_err">Password confirmation doesn\'t equal with password</string>
 </resources>
