@@ -23,6 +23,7 @@ public class ValidationChain {
     private List<Validator> mValidators = new ArrayList<>();
     private ErrorCallback mErrorCallback;
     private SuccessCallback mSuccessCallback;
+    private boolean mShowEditTextError;
     private EditText mText;
     private Context context;
 
@@ -33,6 +34,12 @@ public class ValidationChain {
     private ValidationChain(@NonNull EditText text) {
         mText = text;
         context = text.getContext();
+        mShowEditTextError = true;
+    }
+
+    public ValidationChain enableEditTextError(boolean enable) {
+        mShowEditTextError = enable;
+        return this;
     }
 
     public ValidationChain isNotEmpty(String errMessage) {
@@ -123,7 +130,11 @@ public class ValidationChain {
         for (Validator validator : mValidators) {
             if (!validator.validate(text)) {
                 if (mErrorCallback != null) {
-                    mErrorCallback.onError(validator.getMessage());
+                    String errMessage = validator.getMessage();
+                    if (mShowEditTextError) {
+                        mText.setError(errMessage);
+                    }
+                    mErrorCallback.onError(errMessage);
                 }
                 return false;
             }
